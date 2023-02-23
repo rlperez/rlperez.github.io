@@ -6,6 +6,14 @@ body {
     flex-direction: column;
 }
 
+body .home,.posts,.post,.about {
+    min-height: 80vh;
+}
+
+.hero {
+    height: 480px;
+}
+
 #wrapper {
     flex: 1;
 }
