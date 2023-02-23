@@ -22,7 +22,9 @@ title: Kablamo.me
 author: Rigoerto L. Perez
 email: rigperez@proton.me
 description: >- # this means to ignore newlines until "baseurl:"
-  A web site presenting my work and interests
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+  laboris nisi ut aliquip ex ea commodo consequat.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rlperez.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  rlperez
