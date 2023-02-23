@@ -30,6 +30,10 @@ url: "https://rlperez.github.io" # the base hostname & protocol for your site, e
 github_username:  rlperez
 rss: feed.xml
 
+header_pages:
+  - blog.markdown
+  - about.markdown
+
 # Build settings
 plugins:
   - jekyll-feed
