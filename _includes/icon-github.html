@@ -1,1 +1,8 @@
-<a href="https://github.com/{{ include.username }}"><span class="icon icon--github">{% include icon-github.svg %}</span><span class="username">{{ include.username }}</span></a>
+<a href="https://github.com/{{ site.github_username| escape }}">
+  <span class="icon-text">
+    <span class="icon">
+      <i class="fa fa-github"></i>
+    </span>
+    <span>{{ site.github_username| escape }}</span>
+  </span>
+</a>

@@ -29,6 +29,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rlperez.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  rlperez
 name: Rigoberto L. Perez
+rss: feed.xml
 
 # Build settings
 plugins:
