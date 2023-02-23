@@ -1,0 +1,47 @@
+---
+layout: page
+---
+
+<div class="page container">
+  <div class="columns">
+    <div class="column is-half">
+      {{ content }}
+    </div>
+    <div class="column is-half">
+      <form>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control has-icons-left">
+            <input class="input" type="text" placeholder="Robert Terwilliger" minlength="2" required>
+            <span class="icon is-small is-left">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control has-icons-left">
+            <input class="input" type="email" placeholder="user@email.com" value="" required>
+            <span class="icon is-small is-left">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Textarea" minlength="120" required></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <button class="button is-link">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
