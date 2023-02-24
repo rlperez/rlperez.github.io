@@ -1,4 +1,19 @@
 <ul class="">
+  <li>
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fa fa-copyright"></i>
+      </span>
+      <span>
+        {%- if site.author -%}
+        {{ site.author | escape }}
+        {%- else -%}
+        {{ site.title | escape }}
+        {%- endif -%}
+      </span>
+    </span>
+  </li>
   {%- if site.github_username -%}<li>{%- include icon-github.html -%}</li>{%- endif -%}
+  {%- if site.fivehundredpx_username -%}<li>{%- include icon-fivehundredpx.html -%}</li>{%- endif -%}
   {%- if site.rss -%}<li>{%- include icon-rss.html -%}</li>{%- endif -%}
 </ul>
