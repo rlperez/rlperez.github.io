@@ -6,14 +6,12 @@ body {
     flex-direction: column;
 }
 
-body .container,.home {
-    min-height: 80vh;
-}
-
-.hero {
-    height: 480px;
-}
-
-#wrapper {
+#app {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
 }
