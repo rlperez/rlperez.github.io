@@ -28,18 +28,18 @@
       </div>
     </div>
   </nav>
+  {% if page.hero_title %}
   <section class="hero is-info is-fullhd is-bold">
     <div class="hero-body">
-      <div class="container has-text-centered">
+      <div class="container {{ page.hero_justify | escape }}">
         <h1 class="title">
-          The new standard in &lt;insert industry here&gt;
+          {{ page.hero_title | escape }}
         </h1>
         <h2 class="subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
+          {{ page.hero_subtitle | escape }}
         </h2>
       </div>
     </div>
   </section>
+  {% endif %}
 </header>
