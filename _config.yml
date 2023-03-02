@@ -38,6 +38,10 @@ header_pages:
   - about.markdown
   - contact.markdown
 
+collections:
+  work_experience:
+    sort_by: end_date
+
 # Build settings
 plugins:
   - jekyll-feed
