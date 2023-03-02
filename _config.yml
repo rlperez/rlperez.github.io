@@ -34,6 +34,7 @@ rss: feed.xml
 
 header_pages:
   - blog.markdown
+  - work.markdown
   - about.markdown
   - contact.markdown
 
