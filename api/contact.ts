@@ -1,11 +1,8 @@
----
----
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+import type {VercelRequest, VercelResponse}from '@vercel/node';
+import '@hcaptcha/types';
 
-export default function handler(
-	request: VercelRequest,
-	response: VercelResponse,
-) {
-	const { name } = request.query;
-	return response.end(`Hello {{ site.env.HCAPTCHA_SITE_KEY }}!`);
+export default function handler(request : VercelRequest, response : VercelResponse,) {
+	const hcaptcha_site_key = process.env.HCAPTCHA_SITE_KEY;
+
+    return response.end(`Hello ${hcaptcha_site_key}!`);
 }
