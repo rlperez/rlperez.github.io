@@ -1,3 +1,5 @@
+---
+---
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 export default function handler(
@@ -5,5 +7,5 @@ export default function handler(
 	response: VercelResponse,
 ) {
 	const { name } = request.query;
-	return response.end(`Hello ${name}!`);
+	return response.end(`Hello {{ site.env.HCAPTCHA_SITE_KEY }}!`);
 }
