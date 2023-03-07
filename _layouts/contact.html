@@ -8,7 +8,7 @@ layout: page
       {{ content }}
     </div>
     <div class="column is-half">
-      <form action="" method="POST">
+      <form id="contact-form" action="./api/contact" method="POST">
         <div class="field">
           <label class="label">Name</label>
           <div class="control has-icons-left">
@@ -36,11 +36,11 @@ layout: page
           </div>
         </div>
 
-        <div class="h-captcha" data-sitekey="{{ site.env.HCAPTCHA_SITE_KEY }}"></div>
+        <div class="h-captcha" data-sitekey="{{ site.env.HCAPTCHA_SITE_KEY }}" data-callback="enableContactSubmit"></div>
 
         <div class="field">
           <div class="control">
-            <button class="button is-link">Submit</button>
+            <button id="contact-submit-btn" class="button is-link" type="submit" disabled>Submit</button>
           </div>
         </div>
       </form>
