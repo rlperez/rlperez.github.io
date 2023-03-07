@@ -1,5 +1,4 @@
 import type {VercelRequest, VercelResponse}from '@vercel/node';
-import '@hcaptcha/types';
 
 export default function handler(request : VercelRequest, response : VercelResponse,) {
 	const hcaptcha_site_key = process.env.HCAPTCHA_SITE_KEY;
