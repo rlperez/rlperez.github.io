@@ -31,7 +31,7 @@ const submitContactForm = async () => {
     flash.classList.remove('is-hidden');
 };
 
-const form = document.getElementById("contact-form")[0];
+const form = document.getElementById("contact-form");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     submitContactForm();
