@@ -1,5 +1,4 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import '@hcaptcha/types';
 import { address } from 'ip';
 import { verify } from 'hcaptcha';
 
