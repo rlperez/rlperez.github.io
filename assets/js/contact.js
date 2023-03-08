@@ -1,12 +1,3 @@
-const enableContactSubmit = (resp) => {
-    const btn = document.getElementById("contact-submit-btn");
-    if (resp) {
-        btn.disabled = false;
-    } else {
-        btn.disabled = true
-    }
-};
-
 const submitContactForm = async () => {
     const btn = document.getElementById("contact-submit-btn");
     const form = document.getElementById("contact-form");
@@ -31,8 +22,10 @@ const submitContactForm = async () => {
     flash.classList.remove('is-hidden');
 };
 
-const form = document.getElementById("contact-form");
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    submitContactForm();
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        submitContactForm();
+    });
 });

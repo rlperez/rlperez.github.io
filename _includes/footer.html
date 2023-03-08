@@ -25,5 +25,15 @@
   {%- if page.title == "Contact" -%}
   <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
   <script src="../assets/js/contact.js"></script>
+  <script>
+    function enableContactSubmit(resp) {
+      const btn = document.getElementById("contact-submit-btn");
+      if (resp) {
+        btn.disabled = false;
+      } else {
+        btn.disabled = true
+      }
+    }
+  </script>
   {%- endif -%}
 </footer>
