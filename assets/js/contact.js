@@ -1,9 +1,6 @@
 const submitContactForm = async () => {
-    const btn = document.getElementById("contact-submit-btn");
     const form = document.getElementById("contact-form");
     const flash = document.getElementById("contact-flash");
-
-    btn.disabled = true;
 
     const response = await fetch(form.action, {
         method: form.method,
@@ -16,7 +13,6 @@ const submitContactForm = async () => {
     } else {
         flash.classList.add('is-danger');
         flash.innerText('An error occurred sending message! Please try again later.');
-        btn.disabled = false;
     }
 
     flash.classList.remove('is-hidden');
