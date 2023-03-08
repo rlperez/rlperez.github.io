@@ -1,13 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { address } from 'ip';
 import { verify } from 'hcaptcha';
-
-type CaptchaResponse = {
-	status: number,
-	message: string,
-	error_codes?: string[],
-	hostname?: string,
-};
+import { CaptchaResponse } from './types';
 
 async function verifyCaptcha(hcaptcha_response: string | undefined): Promise<CaptchaResponse> {
 	const hcaptcha_site_key = process.env.HCAPTCHA_SITE_KEY;
@@ -47,4 +41,6 @@ async function verifyCaptcha(hcaptcha_response: string | undefined): Promise<Cap
 export default async function handler(request: VercelRequest, response: VercelResponse,) {
 	const hcaptcha_response = request?.body['h-captcha-response'];
 	const verify_response = await verifyCaptcha(hcaptcha_response);
+
+	response.json(verify_response).end();
 }
