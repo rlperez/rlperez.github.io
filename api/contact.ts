@@ -2,6 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { address } from 'ip';
 import { verify } from 'hcaptcha';
 import { CaptchaResponse } from './types';
+import nodemailer from "nodemailer";
 
 async function verifyCaptcha(hcaptcha_response: string | undefined): Promise<CaptchaResponse> {
 	const hcaptcha_site_key = process.env.HCAPTCHA_SITE_KEY;
@@ -41,6 +42,37 @@ async function verifyCaptcha(hcaptcha_response: string | undefined): Promise<Cap
 export default async function handler(request: VercelRequest, response: VercelResponse,) {
 	const hcaptcha_response = request?.body['h-captcha-response'];
 	const verify_response = await verifyCaptcha(hcaptcha_response);
+
+	if (verify_response.status === 200) {
+
+		const transport = nodemailer.createTransport({
+			host: process.env.EMAIL_HOST,
+			port: 2525,
+			auth: {
+				user: process.env.EMAIL_USER,
+				pass: process.env.EMAIL_PASSWORD
+			}
+		});
+
+		const message = {
+			from: request?.body['contact-email'],
+			to: process.env.CONTACT_EMAIL,
+			subject: `[KABLAMO.ME] CONTACT PAGE FROM ${request?.body['contact-name']}`,
+			body: `NAME: ${request?.body['contact-name']}\n` +
+				`PHONE: ${request?.body['contact-phone']}\n\n` +
+				`${request?.body['contact-body']}`
+		}
+
+		transport.sendMail(message, (err, info) => {
+			if (err) {
+				console.error({ err });
+				return response.json({ status: 500, message: err }).end();
+			} else {
+				console.log({ info });
+				return response.json({ status: 200, message: info }).end();
+			}
+		});
+	}
 
 	response.json(verify_response).end();
 }
