@@ -69,9 +69,10 @@ export default async function handler(request: VercelRequest, response: VercelRe
 				return response.json({ status: 500, message: err }).end();
 			} else {
 				console.log({ info });
-				return response.json({ status: 200, message: info }).end();
 			}
 		});
+
+		return response.json({ status: 200, message: "Email successfull sent" }).end();
 	}
 
 	response.json(verify_response).end();
