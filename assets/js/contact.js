@@ -2,9 +2,14 @@ const submitContactForm = async () => {
     const form = document.getElementById("contact-form");
     const flash = document.getElementById("contact-flash");
 
+    const values = new FormData();
+    document.querySelectorAll("#contact-form .input").forEach(element =>
+        values.append(element.id, element.value));
+    values.append('h-captcha-response', hcaptcha.getResponse());
+
     const response = await fetch(form.action, {
         method: form.method,
-        body: new FormData(form)
+        body: values
     }).then((response) => response.json());
 
     if (response.status === 200) {

@@ -43,16 +43,18 @@ layout: page
         <div class="field">
           <label class="label">Message</label>
           <div class="control">
-            <textarea id="contact-body" class="textarea" placeholder="Your message here..." minlength="120" required></textarea>
+            <textarea id="contact-body" class="textarea input" placeholder="Your message here..." minlength="120"
+              required></textarea>
           </div>
         </div>
 
-        <div class="h-captcha" data-sitekey="{{ site.env.HCAPTCHA_SITE_KEY }}" data-callback="enableContactSubmit">
+        <div id="h-captcha" class="h-captcha" data-sitekey="{{ site.env.HCAPTCHA_SITE_KEY }}"
+          data-callback="enableContactSubmit">
         </div>
 
         <div class="field">
           <div class="control">
-            <button id="contact-submit-btn" class="button is-link" type="submit" disabled>Submit</button>
+            <button id="contact-submit-btn" class="button is-link" type="submit">Submit</button>
           </div>
         </div>
       </form>

@@ -40,6 +40,8 @@ async function verifyCaptcha(hcaptcha_response: string | undefined): Promise<Cap
 }
 
 export default async function handler(request: VercelRequest, response: VercelResponse,) {
+	const a = JSON.parse(request.body);
+	console.log({ a })
 	const hcaptcha_response = request?.body['h-captcha-response'];
 	const verify_response = await verifyCaptcha(hcaptcha_response);
 
